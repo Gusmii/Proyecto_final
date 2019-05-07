@@ -11,11 +11,30 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     
     <link rel="stylesheet" href="carrito.css">
+    <link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <title>Hello, world!</title>
 </head>
 
 <body>
-    <div class="container"></div>
+        <nav>
+                <div class="nav-wrapper">
+                    <img class="logo"src="img/logo.jpg">
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a href="admin.html">Admin</a></li>
+                        <li><a><img class="carrito" src="img/carrito.svg"></a></li>
+                    </ul>
+                </div>
+            </nav>
+    <table>
+        <tr>
+            <td>imagen</td>
+            <td>nombre</td>
+            <td></td>
+        </tr>
+        <tbody></tbody>
+    </table>
+    <button type="button" class="button btn-primary">comprar</button>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
@@ -34,22 +53,12 @@
             function printProducts(response) {
                 var htmlzatia = '';
                 for (i in response) {
-
-                    htmlzatia = '<div class="card col-sm-4">';
-                    htmlzatia += '<div class="card-img">';
-                    htmlzatia += '<img src="' + response[i].imagen + '" class="card-img-top">';
-                    htmlzatia += '</div>';
-                    htmlzatia += '<div class="card-body">';
-                    htmlzatia += '<h5>' + response[i].nombre
-                        + '</h5>';
-                    htmlzatia += '</div>';
-                    htmlzatia += '<div class="footer">';
-                    htmlzatia += '<p class="precio">'
-                        + response[i].precio + '€</p>';
-                    htmlzatia += '<img class="borrar" src="../x-mark.svg" alt="../x-mark.svg">';
-                    htmlzatia += '</div>';
-
-                    $(".container").append(htmlzatia);
+                    htmlzatia = '<tr>';
+                    htmlzatia += '<td><img src="'+response[i].imagen+'"></td>';
+                    htmlzatia += '<td>'+response[i].nombre+'</td>';
+                    htmlzatia += '<td><img src="img/x-mark.svg" class="borrar">';
+                    htmlzatia +='</tr>';
+                    $('tbody').append(htmlzatia);
                 }
             }
         })
