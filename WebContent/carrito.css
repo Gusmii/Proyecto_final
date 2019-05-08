@@ -17,6 +17,6 @@ table{
 .carrito{
     width: 50px;
 }
-body{
-    text-align: center;
+.btn-primary{
+    margin: 10px;
 }

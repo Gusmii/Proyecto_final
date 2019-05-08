@@ -1,0 +1,22 @@
+.form{
+    width: 33%;
+    background-color: white;
+
+    
+}
+.background{
+    /* display: flex; */
+    
+    
+}
+body{
+    text-align: center;
+    background-color: gray;
+}
+
+.container{
+    width: 33%;
+}
+.list{
+    width: 33%;
+}
